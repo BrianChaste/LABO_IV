@@ -1,5 +1,4 @@
-const Persona = requiere(./);
-let opcion = parseFloat(prompt("Ingrese numero ejercicio"));
+let opcion = parseFloat(prompt("Ingrese una opcion"));
 
 switch (opcion) {
   case 1:
@@ -8,9 +7,25 @@ switch (opcion) {
   case 2:
     segundoEjercicio();
     break;
-    case 3:
-      tercerEjercicio();
+  case 3:
+    tercerEjercicio();
     break;
+  case 4:
+    cuaertoEjercicio();
+    break;
+  case 5:
+    ejercicioCinco();
+    break;
+  case 6:
+    ejercicioSeis();
+    break;
+  case 7:
+    ejercicioSiete();
+    break;
+    case 8: ejerciciOcho(); 
+    break;
+    case 9: ejercicioNueve();
+      break;
 }
 
 function primerEjercicio() {
@@ -23,21 +38,106 @@ function segundoEjercicio() {
   notificarNota(nota);
 }
 
-function tercerEjercicio (){
+function cuaertoEjercicio() {
+  let texto = prompt("Ingrese un texto");
 
-  let listaPeronas = new Array(Persona);
-  let persona1 = new Persona("Brian", 24);
+  if (isNaN(texto)) {
+    texto = texto.toUpperCase();
+    alert(`Su texto en mayuculas: ${texto}`);
+  } else {
+    alert("Formato no valido");
+  }
+}
 
-  listaPeronas.push(persona1);
+function ejercicioCinco() {
+  let i = 1;
 
+  alert(
+    `${i}` +
+      "\n" +
+      `${++i} ${++i}` +
+      "\n" +
+      `${++i} ${++i} ${++i}` +
+      "\n" +
+      `${++i} ${++i} ${++i} ${++i}` +
+      "\n" +
+      `${++i} ${++i} ${++i} ${++i} ${++i}` +
+      "\n" +
+      `${++i} ${++i} ${++i} ${++i} ${++i} ${++i}` +
+      "\n" +
+      `${++i} ${++i} ${++i} ${++i} ${++i} ${++i} ${++i}` +
+      "\n" +
+      `${++i} ${++i} ${++i} ${++i} ${++i} ${++i} ${++i} ${++i}`
+  );
+}
 
-  console.log(listaPeronas[0]);
- 
+function ejercicioSeis() {
+  for (let i = 0; i <= 500; i++) {
+    if (i % 4 == 0 && i % 9 == 0) {
+      alert(`El numero ${i} es multiplo de 4 y 9`);
+    } else if (i % 4 == 0) {
+      alert(`El numero ${i} es multiplo de 4`);
+    } else if (i % 9 == 0) {
+      alert(`El numero ${i} es multiplo de 9`);
+    }
+  }
+}
 
-  
+function ejercicioSiete() {
+  let acumulador = 0;
+  let numero;
 
+  do {
+    numero = parseFloat(prompt("Ingrese un numero - Para salir 0"));
 
+    if (!isNaN(numero)) {
+      acumulador += numero;
+    } else {
+      alert("Numero no valido");
+    }
+  } while (numero != 0);
+
+  alert(`Suma total: ${acumulador}`);
+}
+
+function ejerciciOcho(){
+
+let texto;
+let cadena = new Array();
+
+do{
+
+texto = prompt("Ingrese un texto - Escriba 'fin' para cancelar.");
+
+if (!(texto === "fin")){
+  cadena.push(texto);
+}
+
+}while (!(texto === "fin"));
+
+texto = cadena.join(" - ");
+
+alert(`${texto}`);
 
 }
 
+function ejercicioNueve (){
 
+  const vocales = ['a','e','i','o','u'];
+
+  const texto = prompt("Ingrese un texto");
+
+  let contador = 0;
+
+  for (let i = 0; i < texto.length; i++){
+
+    if (vocales.includes(texto[i])){
+      contador++;
+    }
+
+  }
+
+  alert(`El texto: ${texto} tiene ${contador} vocales`);
+
+
+}
