@@ -22,10 +22,18 @@ switch (opcion) {
   case 7:
     ejercicioSiete();
     break;
-    case 8: ejerciciOcho(); 
+  case 8:
+    ejerciciOcho();
     break;
-    case 9: ejercicioNueve();
-      break;
+  case 9:
+    ejercicioNueve();
+    break;
+  case 10:
+    ejerciciDiez();
+    break;
+  case 11:
+    ejercicioOnce();
+    break;
 }
 
 function primerEjercicio() {
@@ -100,44 +108,61 @@ function ejercicioSiete() {
   alert(`Suma total: ${acumulador}`);
 }
 
-function ejerciciOcho(){
+function ejerciciOcho() {
+  let texto;
+  let cadena = new Array();
 
-let texto;
-let cadena = new Array();
+  do {
+    texto = prompt("Ingrese un texto - Escriba 'fin' para cancelar.");
 
-do{
+    if (!(texto === "fin")) {
+      cadena.push(texto);
+    }
+  } while (!(texto === "fin"));
 
-texto = prompt("Ingrese un texto - Escriba 'fin' para cancelar.");
+  texto = cadena.join(" - ");
 
-if (!(texto === "fin")){
-  cadena.push(texto);
+  alert(`${texto}`);
 }
 
-}while (!(texto === "fin"));
-
-texto = cadena.join(" - ");
-
-alert(`${texto}`);
-
-}
-
-function ejercicioNueve (){
-
-  const vocales = ['a','e','i','o','u'];
+function ejercicioNueve() {
+  const vocales = ["a", "e", "i", "o", "u"];
 
   const texto = prompt("Ingrese un texto");
 
   let contador = 0;
 
-  for (let i = 0; i < texto.length; i++){
-
-    if (vocales.includes(texto[i])){
+  for (let i = 0; i < texto.length; i++) {
+    if (vocales.includes(texto[i])) {
       contador++;
     }
-
   }
 
   alert(`El texto: ${texto} tiene ${contador} vocales`);
+}
 
+function ejerciciDiez() {
+  const texto = prompt("Ingrese un texto");
 
+  const nuevoTexto = texto.split("").reverse().join("");
+
+  // Split Divide el String en un array de carcateres
+  // Reverese da vuelta ese array
+  // Join Une los caracteres invertidos
+
+  alert(`Su texto ${texto} su texto al revez ${nuevoTexto}`);
+}
+
+function ejercicioOnce() {
+  const radio = parseFloat(prompt("Ingrese el radio del circulo"));
+  const PI = 3.1416;
+  let area;
+  area = PI * (radio ** 2);
+
+  /////////////////////////////////////////
+
+  // area = Math.PI * Math.pow(radio,2);
+  //PI * radio elevado al cuadrado
+
+  alert(`El area del cirulo es ${area}`);
 }
