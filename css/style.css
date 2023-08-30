@@ -1,0 +1,26 @@
+.titulo1{
+    text-align: center;
+    color: blue;
+}
+
+
+/* Estilos para el botón */
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Estilos para el campo de entrada */
+  input{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+  }
