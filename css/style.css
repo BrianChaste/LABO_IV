@@ -1,26 +1,87 @@
-.titulo1{
-    text-align: center;
-    color: blue;
+body {
+  background-color: cadetblue;
+}
+
+h1,h2 {
+  text-align: center;
+  color: rgb(52, 52, 192);
+}
+
+/*Estilos para el boton*/
+.boton1 {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 1rem;
+  width: 20rem;
+  margin: auto;
+  border: none;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  text-transform: uppercase;
+
+}
+
+/* Hover es cuando pasamos el mouse por arriba*/
+.boton1:hover {
+  color: black;
+  background-color: orangered;
 }
 
 
-/* Estilos para el botón */
-button {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  /* Estilos para el campo de entrada */
-  input{
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    display: block;
-    margin: 0 auto;
-  }
+/*Active es cuando hacemos click*/
+.boton1:active {
+  color: pink;
+  background-color: black;
+}
+
+/* Estilos para el campo de entrada (INPUT)*/
+.general {
+  padding: 8px;
+  background-color: whitesmoke;
+  border: whitesmoke;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  width: 15rem;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+/*Hover cuando pasamos por encima del input*/
+.general:hover {
+  border: transparent;
+  background-color: cadetblue;
+}
+
+/*Active cuando hacemos click en el input*/
+.general:active {
+  border: transparent;
+  background-color: cadetblue;
+  color: transparent;
+
+}
+
+/*Focus cuando estamos editando el input*/
+.general:focus {
+  /*  outline: none;*/
+  border: none;
+  background-color: cadetblue;
+}
+
+.resultado {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%) translateY(-30%);
+  color: blue;
+}
+
+.separacion{
+  border-radius: 2rem;
+  outline: none;
+  height: 1rem;
+  margin-top: 6rem;
+  background-color: #333;
+}

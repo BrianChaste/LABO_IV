@@ -1,3 +1,7 @@
+let resultado = document.getElementById("resultado");
+
+
+
 function miFuncion() {
    
   let numero = document.getElementById("numero").value;
@@ -15,7 +19,7 @@ function miFuncion() {
       tercerEjercicio();
       break;
     case 4:
-      cuaertoEjercicio();
+      cuartoEjercicio();
       break;
     case 5:
       ejercicioCinco();
@@ -41,49 +45,56 @@ function miFuncion() {
     default:
       alert("Incorrecto");
       break;
+
+      
   }
+
+  setTimeout(() => resultado.textContent = "", 2000);
+
 }
 
 function primerEjercicio() {
   let edad = parseFloat(prompt("Ingrese su edad"));
 
   if (edad >= 18) {
-    alert("La edad ingresada es mayor de edad");
+    resultado.textContent = `La edad ${edad} es mayor de edad`
   } else {
-    alert("La edad ingresada es menor de edad");
+    resultado.textContent = `La edad ${edad} es menor de edad`
   }
+
+
 }
 
 function segundoEjercicio() {
   let nota = parseFloat(prompt("Ingrese nota"));
-
+  
   if (!isNaN(nota)) {
     if (nota >= 0 && nota <= 3) {
-      alert(`Su nota ${nota} es muy deficiente`);
+      resultado.textContent = `Su nota ${nota} es muy deficiente`;
     } else if (nota >= 3 && nota <= 5) {
-      alert(`Su nota ${nota} es insuficiente`);
+      resultado.textContent = `Su nota ${nota} es insuficiente`;
     } else if (nota == 5 || nota == 6) {
-      alert(`Su nota ${nota} es suficiente`);
+      resultado.textContent = `Su nota ${nota} es suficiente`;
     } else if (nota == 6 || nota == 7) {
-      alert(`Su nota ${nota} es bien`);
+      resultado.textContent = `Su nota ${nota} esta bien`;
     } else if (nota >= 7 && nota <= 9) {
-      alert(`Su nota ${nota} es notable`);
+      resultado.textContent = `Su nota ${nota} es notable`;
     } else if (nota == 9 || nota == 10) {
-      alert(`Su nota ${nota} es sobresaliente`);
+      resultado.textContent = `Su nota ${nota} es sobresaliente`;
     }
   } else {
-    alert("El digito ingresado no es valido");
+    resultado.textContent = `El digito ingresado no es valido`;
   }
 }
 
-function cuaertoEjercicio() {
+function cuartoEjercicio() {
   let texto = prompt("Ingrese un texto");
 
   if (isNaN(texto)) {
     texto = texto.toUpperCase();
-    alert(`Su texto en mayuculas: ${texto}`);
+    resultado.textContent = `Su texto en mayusculas: ${texto}`;
   } else {
-    alert("Formato no valido");
+    resultado.textContent = `Formato no valido`;
   }
 }
 
@@ -107,6 +118,7 @@ function ejercicioCinco() {
       "\n" +
       `${++i} ${++i} ${++i} ${++i} ${++i} ${++i} ${++i} ${++i}`
   );
+  
 }
 
 function ejercicioSeis() {
@@ -135,7 +147,7 @@ function ejercicioSiete() {
     }
   } while (numero != 0);
 
-  alert(`Suma total: ${acumulador}`);
+  resultado.textContent = `Suma total: ${acumulador}`
 }
 
 function ejerciciOcho() {
@@ -148,6 +160,7 @@ function ejerciciOcho() {
     if (!(texto === "fin")) {
       cadena.push(texto);
     }
+
   } while (!(texto === "fin"));
 
   texto = cadena.join(" - ");
@@ -168,7 +181,7 @@ function ejercicioNueve() {
     }
   }
 
-  alert(`El texto: ${texto} tiene ${contador} vocales`);
+  resultado.textContent = `El texto: ${texto} tiene ${contador} vocales`
 }
 
 function ejerciciDiez() {
@@ -180,7 +193,7 @@ function ejerciciDiez() {
   // Reverese da vuelta ese array
   // Join Une los caracteres invertidos
 
-  alert(`Su texto ${texto} su texto al revez ${nuevoTexto}`);
+  resultado.textContent = `Su texto ${texto} su texto al revez ${nuevoTexto}`;
 }
 
 function ejercicioOnce() {
@@ -194,5 +207,7 @@ function ejercicioOnce() {
   // area = Math.PI * Math.pow(radio,2);
   //PI * radio elevado al cuadrado
 
-  alert(`El area del cirulo es ${area}`);
+  resultado.textContent = `El area del cirulo es ${area}`;
 }
+
+
