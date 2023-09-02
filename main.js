@@ -1,9 +1,6 @@
 let resultado = document.getElementById("resultado");
 
-
-
-function miFuncion() {
-   
+function guia1() {
   let numero = document.getElementById("numero").value;
 
   numero = parseFloat(numero);
@@ -45,29 +42,24 @@ function miFuncion() {
     default:
       alert("Incorrecto");
       break;
-
-      
   }
 
-  setTimeout(() => resultado.textContent = "", 2000);
-
+  setTimeout(() => (resultado.textContent = ""), 2000);
 }
 
 function primerEjercicio() {
   let edad = parseFloat(prompt("Ingrese su edad"));
 
   if (edad >= 18) {
-    resultado.textContent = `La edad ${edad} es mayor de edad`
+    resultado.textContent = `La edad ${edad} es mayor de edad`;
   } else {
-    resultado.textContent = `La edad ${edad} es menor de edad`
+    resultado.textContent = `La edad ${edad} es menor de edad`;
   }
-
-
 }
 
 function segundoEjercicio() {
   let nota = parseFloat(prompt("Ingrese nota"));
-  
+
   if (!isNaN(nota)) {
     if (nota >= 0 && nota <= 3) {
       resultado.textContent = `Su nota ${nota} es muy deficiente`;
@@ -118,7 +110,6 @@ function ejercicioCinco() {
       "\n" +
       `${++i} ${++i} ${++i} ${++i} ${++i} ${++i} ${++i} ${++i}`
   );
-  
 }
 
 function ejercicioSeis() {
@@ -147,7 +138,7 @@ function ejercicioSiete() {
     }
   } while (numero != 0);
 
-  resultado.textContent = `Suma total: ${acumulador}`
+  resultado.textContent = `Suma total: ${acumulador}`;
 }
 
 function ejerciciOcho() {
@@ -160,7 +151,6 @@ function ejerciciOcho() {
     if (!(texto === "fin")) {
       cadena.push(texto);
     }
-
   } while (!(texto === "fin"));
 
   texto = cadena.join(" - ");
@@ -181,7 +171,7 @@ function ejercicioNueve() {
     }
   }
 
-  resultado.textContent = `El texto: ${texto} tiene ${contador} vocales`
+  resultado.textContent = `El texto: ${texto} tiene ${contador} vocales`;
 }
 
 function ejerciciDiez() {
@@ -210,4 +200,117 @@ function ejercicioOnce() {
   resultado.textContent = `El area del cirulo es ${area}`;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+function guia2() {
+  let numeroEjercicio = document.getElementById("numero2").value;
+
+  numeroEjercicio = parseFloat(numeroEjercicio);
+
+  switch (numeroEjercicio) {
+    case 1:
+      let persona = new Persona();
+
+      persona._nombre = prompt("Ingrese su nombre");
+      persona._edad = prompt("Ingrese su edad");
+      persona._dni = prompt("Ingrese su numero de documento");
+      persona._profesion = prompt("Ingrese su profesion");
+
+      resultado2.textContent = persona.toString();
+
+      break;
+
+    case 2:
+      let heroe1 = new SuperHero();
+
+      heroe1._nombre = prompt("Ingrese su nombre");
+      heroe1._poder = prompt("Ingrese su poder");
+
+      resultado2.textContent = heroe1.presentarse();
+
+      break;
+
+    case 3:
+      let villano = new Villano();
+
+      villano._nombre = prompt("Ingrese su nombre villano");
+      villano._poder = prompt("Ingrese su poder villano");
+      villano._plan = prompt("Ingrese su plan malvado");
+
+      resultado2.textContent = villano.presentarse() + villano.amenazar();
+      break;
+  }
+
+  setTimeout(() => (resultado2.textContent = ""), 2000);
+}
+
+class Persona {
+  contadorPersona = 0;
+
+  constructor(nombre, edad, dni, profesion) {
+    this._nombre = nombre;
+    this._edad = edad;
+    this._dni = dni;
+    this._profesion = profesion;
+    this.contadorPersona++;
+  }
+
+  get nombre() {
+    return this._nombre;
+  }
+
+  set nombre(nombre) {
+    this._nombre = nombre;
+  }
+
+  get edad() {
+    return this._edad;
+  }
+
+  set edad(edad) {
+    this._edad = edad;
+  }
+
+  get dni() {
+    return this._dni;
+  }
+
+  set dni(dni) {
+    this._dni = dni;
+  }
+
+  get profesion() {
+    return this._profesion;
+  }
+
+  set profesion(profesion) {
+    this._profesion = profesion;
+  }
+
+  toString() {
+    return `Soy ${this._nombre} tengo ${this._edad},
+    mi numero de documento es ${this._dni} y soy ${this._profesion}`;
+  }
+}
+
+class SuperHero {
+  constructor(nombre, poder) {
+    this._nombre = nombre;
+    this._poder = poder;
+  }
+
+  presentarse() {
+    return `Mi nombre es ${this._nombre} y tengo el poder de ${this._poder}`;
+  }
+}
+
+class Villano extends SuperHero {
+  constructor(nombre, poder, plan) {
+    super(nombre, poder);
+    this._plan = plan;
+  }
+
+  amenazar() {
+    return `Mi plan malvado es ${this._plan}`;
+  }
+}

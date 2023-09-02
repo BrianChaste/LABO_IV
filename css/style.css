@@ -70,13 +70,22 @@ h1,h2 {
   background-color: cadetblue;
 }
 
-.resultado {
+.resultado, .resultado2{
   position: absolute;
   left: 50%;
   top: 20%;
   transform: translateX(-50%) translateY(-30%);
   color: blue;
 }
+
+.resultado2{
+  top: 47%;
+  transform: translateX(-50%) translateY(-47%);
+}
+
+
+
+
 
 .separacion{
   border-radius: 2rem;
