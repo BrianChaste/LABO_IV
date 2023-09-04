@@ -7,16 +7,16 @@ function guia1() {
 
   switch (numero) {
     case 1:
-      primerEjercicio();
+      ejercicioUno();
       break;
     case 2:
-      segundoEjercicio();
+      ejercicioDos();
       break;
     case 3:
-      tercerEjercicio();
+      ejercicioTres();
       break;
     case 4:
-      cuartoEjercicio();
+      ejercicioCuarto();
       break;
     case 5:
       ejercicioCinco();
@@ -47,7 +47,7 @@ function guia1() {
   setTimeout(() => (resultado.textContent = ""), 2000);
 }
 
-function primerEjercicio() {
+function ejercicioUno() {
   let edad = parseFloat(prompt("Ingrese su edad"));
 
   if (edad >= 18) {
@@ -57,7 +57,7 @@ function primerEjercicio() {
   }
 }
 
-function segundoEjercicio() {
+function ejercicioDos() {
   let nota = parseFloat(prompt("Ingrese nota"));
 
   if (!isNaN(nota)) {
@@ -79,7 +79,7 @@ function segundoEjercicio() {
   }
 }
 
-function cuartoEjercicio() {
+function ejercicioCuarto() {
   let texto = prompt("Ingrese un texto");
 
   if (isNaN(texto)) {

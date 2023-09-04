@@ -1,8 +1,14 @@
-body {
+body{
   background-color: cadetblue;
 }
 
-h1,h2 {
+/* body{ 
+  background: linear-gradient(#5599aa, #D8D8D8, transparent);
+  min-height: 100vh;
+} */
+
+h1,
+h2 {
   text-align: center;
   color: rgb(52, 52, 192);
 }
@@ -70,7 +76,8 @@ h1,h2 {
   background-color: cadetblue;
 }
 
-.resultado, .resultado2{
+.resultado,
+.resultado2 {
   position: absolute;
   left: 50%;
   top: 20%;
@@ -78,16 +85,14 @@ h1,h2 {
   color: blue;
 }
 
-.resultado2{
+.resultado2 {
   top: 47%;
   transform: translateX(-50%) translateY(-47%);
 }
 
 
 
-
-
-.separacion{
+.separacion {
   border-radius: 2rem;
   outline: none;
   height: 1rem;
