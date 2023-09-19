@@ -1,0 +1,28 @@
+
+.parrafo{
+    font-size: 2rem;
+    color: var(--colorSimpson);
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+    margin-top: 1rem;
+    text-align: center;
+    margin-left: -42rem;
+}
+
+.input-user{
+    width: 30%;
+    margin-left: 8rem;  
+}
+
+.contenedor-imagen{
+    display: flex;
+    max-height: 402px;
+    margin-left: 16rem;
+    margin-top: 0.3rem;
+}
+
+.imagen{
+    /* border: 1px solid black; */
+    max-width: 100%;
+    max-height: 60%;
+}

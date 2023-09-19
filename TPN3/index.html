@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/game.css">
+    <link href="https://fonts.cdnfonts.com/css/homer-simpson-revised" rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
 
-    <h1>SIMPSON ADIVINADOR</h1>
 
-    <button id="jugar-boton">JUGAR</button>
+    <header>
+        <div class="contenedor-titulo">
+            <h1>THE SIMPSON GAME</h1>
+            <h2>¿Que tanto sabes de los simpsons?</h2>
+            <button id="jugar-boton">JUGAR</button>
+        </div>
+    </header>
+   
+    <main>
+        <div id="game" class="game" style="display: none;">
 
-    <div class="contenedor-imagen">
-        <P>¿Como se llama este personaje?</P>
-        <img id="imagen">
-    </div>
+            <p class="parrafo">¡¿Como se llama este personaje?!</p>
 
-    <input id="name-img" type="text" placeholder="Ingrese nombre">
-    <button id="boton" type="button">Enviar</button>
-    
-    
-    
+            <input id="name-img" type="text" placeholder="Ingrese nombre" class="input-user">
+            <button id="boton" type="button" class="boton-enviar">Enviar</button>
+
+
+            <div class="contenedor-imagen">
+                <img id="imagen" class="imagen">
+            </div>
+
+
+        
+        </div>
+    </main>
+
+
+
+
+ 
+
+
     <script src="main.js" type="module"></script>
 
 </body>
+
 </html>
