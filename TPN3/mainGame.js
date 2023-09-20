@@ -1,32 +1,28 @@
-import { getPersonajesAPI } from "./Conexion-API.js";
+import { getPersonajesAPI } from "./conexion-api.js";
 
 const imagenData = document.getElementById("imagen");
 const boton = document.getElementById("boton");
 const botonJugar = document.getElementById("jugar-boton");
+const botonAyuda = document.getElementById("personaje-pista");
 const game = document.getElementById("game");
+const historiaData = document.getElementById("personaje-historia");
 
-function mostrarJuego () {
-    game.style.display = 'block';
-}
+game.style.display = 'none';
+botonJugar.innerHTML = "JUGAR";
 
-
-async function mostrarPersonaje(){
+async function playGame(){
     const personajes = await getPersonajesAPI();
-    let personajeAleatorio = personajes[Math.floor(Math.random() * personajes.length)];
+    var personajeAleatorio = personajes[Math.floor(Math.random() * personajes.length)];
 
-    mostrarJuego();
+    game.style.display = 'block';
+    botonJugar.innerHTML = "REFRESH"
     
     imagenData.setAttribute("src", personajeAleatorio.Imagen);
     imagenData.setAttribute("alt",personajeAleatorio.Nombre);
 
     //Para ver el nombre del personaje x consola
     //!console.log(imagenData.getAttribute("alt"));
-
 }
-
-
-
-botonJugar.addEventListener("click", mostrarPersonaje);
 
 boton.addEventListener("click", () =>{
 
@@ -38,3 +34,9 @@ boton.addEventListener("click", () =>{
         alert(`INCORRECTO EL PERSONAJE ERA: ${imagenData.getAttribute("alt")}`);
     }
 })
+
+
+botonJugar.addEventListener("click", playGame);
+
+
+
